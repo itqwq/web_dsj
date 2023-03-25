@@ -41,7 +41,7 @@
         {username:$('#form_reg [name=username]').val(),
         password: $('#form_reg [name=password]').val()},
         function(res){
-            console.log(res);
+            // console.log(res);
             if(res.status !== 0 ){
                 //利用layui框架的layer提示功能制作
                 return layer.msg(res.message);
@@ -62,14 +62,14 @@
     //快速获取表单数据
     data:$('#form_leb').serialize()
     }).then(res=>{
-        console.log(res);
+        // console.log(res);
         if(res.status !== 0){
             return layer.msg('登录失败');
         }
         layer.msg('登录成功');
         //拿一个数据存储token值 因为这个值拥有后台访问权限 将得到的token字符串 保存到 localStorage 中
         localStorage.setItem('token',res.token)
-        console.log(res.token);
+        // console.log(res.token);
         //跳转至后台
         location.href = 'index.html'
     })
